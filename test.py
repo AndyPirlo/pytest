@@ -41,13 +41,6 @@ class FolderSelectorApp:
     def select_folder(self):
         # Open folder dialog
         folder_path = filedialog.askdirectory()
-        if folder_path:
-            if self.is_valid_hls_folder(folder_path):
-                self.selected_folder.config(text=folder_path)
-            else:
-                messagebox.showerror("Invalid HLS Folder", "The selected folder is not a valid HLS folder.")
-        else:
-            messagebox.showwarning("No Folder Selected", "Please select a valid folder.")
 
     def is_valid_hls_folder(self, folder_path):
         # Check for folder containing 'C_Code', 'Calibration_CLIMBOX', and .slx file
